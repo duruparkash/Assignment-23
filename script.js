@@ -57,7 +57,7 @@ function withdraw(amount) {
 
   if (amount > this.balance) {
     transactionHistory.push({
-      text: `⚠️ <strong>${this.name}</strong> tried to withdraw Rs. ${amount} but had Insufficient Balance!`,
+      text: `<strong>${this.name}</strong> tried to withdraw Rs. ${amount} but had Insufficient Balance!`,
       typeClass: "log-error",
     });
     updateHistoryUI();
@@ -67,7 +67,7 @@ function withdraw(amount) {
   this.balance -= amount;
 
   transactionHistory.push({
-    text: `💸 <strong>${this.name}</strong> withdrew Rs. ${amount}. (Remaining Balance: Rs. ${this.balance})`,
+    text: `<strong>${this.name}</strong> withdrew Rs. ${amount}. (Remaining Balance: Rs. ${this.balance})`,
     typeClass: "log-withdraw",
   });
 
