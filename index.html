@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking App - Transaction History</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meezan App</h1>
+
+      <div class="accounts-container">
+        <div class="card">
+          <h3>Account 1</h3>
+          <p id="user1">Loading...</p>
+          <div class="actions">
+            <input type="number" id="amt1" placeholder="Amount" />
+            <button
+              onclick="
+                deposit.call(
+                  account1,
+                  Number(document.getElementById('amt1').value),
+                )
+              "
+              class="btn-deposit"
+            >
+              Deposit
+            </button>
+            <button
+              onclick="
+                duruWithdraw(Number(document.getElementById('amt1').value))
+              "
+              class="btn-withdraw"
+            >
+              Withdraw (Bind)
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Account 2</h3>
+          <p id="user2">Loading...</p>
+          <div class="actions">
+            <input type="number" id="amt2" placeholder="Amount" />
+            <button
+              onclick="
+                deposit.call(
+                  account2,
+                  Number(document.getElementById('amt2').value),
+                )
+              "
+              class="btn-deposit"
+            >
+              Deposit
+            </button>
+            <button
+              onclick="
+                withdraw.call(
+                  account2,
+                  Number(document.getElementById('amt2').value),
+                )
+              "
+              class="btn-withdraw"
+            >
+              Withdraw
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h2>Transaction History</h2>
+      <div id="history-log" class="history-container">
+        <p class="empty-msg">No transactions made yet.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
